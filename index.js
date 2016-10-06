@@ -4,7 +4,7 @@ var serand = require('serand');
 exports.findOne = function (id, done) {
     $.ajax({
         method: 'GET',
-        url: exports.resolve('autos://apis/v/vehicle-makes/' + id),
+        url: utils.resolve('autos://apis/v/vehicle-makes/' + id),
         dataType: 'json',
         success: function (make) {
             done(null, make);
@@ -15,10 +15,10 @@ exports.findOne = function (id, done) {
     });
 };
 
-exports.find = function (id, done) {
+exports.find = function (done) {
     $.ajax({
         method: 'GET',
-        url: exports.resolve('autos://apis/v/vehicle-makes'),
+        url: utils.resolve('autos://apis/v/vehicle-makes'),
         dataType: 'json',
         success: function (makes) {
             done(null, makes);
