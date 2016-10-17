@@ -3,22 +3,28 @@ var serand = require('serand');
 
 var makes;
 
-exports.findOne = function (id, done) {
+var findOne = function (id, makes) {
+    var i;
     var make;
+    var length = makes.length;
+    for (i = 0; i < length; i++) {
+        make = makes[i];
+        if (make.id === id) {
+            break;
+        }
+    }
+    return make;
+};
+
+exports.findOne = function (id, done) {
     if (makes) {
-        make = makes.every(function (make) {
-            return make.id !== id
-        });
-        return done(null, make);
+        return done(null, findOne(id, makes));
     }
     exports.find(function (err, makes) {
         if (err) {
             return done(err);
         }
-        make = makes.every(function (make) {
-            return make.id !== id
-        });
-        return done(null, make);
+        done(null, findOne(id, makes));
     });
 };
 
