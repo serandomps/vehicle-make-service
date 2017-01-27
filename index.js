@@ -32,7 +32,7 @@ exports.find = function (done) {
     if (makes) {
         return done(null, makes);
     }
-    utils.sync('vehicle-make-service:find', function (ran) {
+    utils.sync('vehicle-makes-service:find', function (ran) {
         $.ajax({
             method: 'GET',
             url: utils.resolve('autos://apis/v/vehicle-makes'),

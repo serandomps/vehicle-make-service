@@ -1,6 +1,6 @@
 {
-    "name": "vehicle-make-service",
-    "description": "vehicle-make-service component",
+    "name": "vehicle-makes-service",
+    "description": "vehicle-makes-service component",
     "local": [],
     "scripts": ["index.js"],
     "main": "index.js",
