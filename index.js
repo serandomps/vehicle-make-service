@@ -41,8 +41,8 @@ exports.find = function (done) {
                 makes = data;
                 ran(null, makes);
             },
-            error: function () {
-                ran(new Error('error retrieving vehicle-makes'));
+            error: function (xhr, status, err) {
+                ran(err || status || xhr);
             }
         });
     }, done);
