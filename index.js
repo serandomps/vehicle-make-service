@@ -35,7 +35,7 @@ exports.find = function (done) {
     utils.sync('vehicle-makes-service:find', function (ran) {
         $.ajax({
             method: 'GET',
-            url: utils.resolve('autos://apis/v/vehicle-makes'),
+            url: utils.resolve('autos:///apis/v/vehicle-makes'),
             dataType: 'json',
             success: function (data) {
                 makes = data;
